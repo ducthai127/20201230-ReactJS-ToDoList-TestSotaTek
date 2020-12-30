@@ -335,8 +335,11 @@ body.safari input, body.safari textarea, body.safari button, body.safari select,
       -moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;
   }
 
-  .wt-100 {width: 100%;}
   .ht-100 {height: 100%;}
+  .wt-100 {width: 100%;}
+  .wt-50, .left-half, .right-half {width: 50%;}
+  .left-half {padding-right: 1rem;}
+  .right-half {padding-left: 1rem;}
 
 
 
@@ -407,7 +410,7 @@ body.safari input, body.safari textarea, body.safari button, body.safari select,
   .custom-form .form-group:not(:last-child) {
     margin-bottom: 1.25rem;
   }
-  .custom-form .form-group > label {
+  .custom-form .form-group label {
     display: inline-block;
     margin-bottom: 0.35rem;
     font-size: 0.875rem;
@@ -436,7 +439,7 @@ body.safari input, body.safari textarea, body.safari button, body.safari select,
     -o-transition:all 0.3s ease;
     transition:all 0.3s ease;
 }
-.custom-form select, .custom-form textarea {
+.custom-form select, .custom-form textarea, .custom-form .react-datepicker-wrapper input#date {
     border-color: #000000;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -444,6 +447,7 @@ body.safari input, body.safari textarea, body.safari button, body.safari select,
     -ms-border-radius: 0;
     -o-border-radius: 0;
 }
+.custom-form .react-datepicker-wrapper {width: 100%;}
 .custom-form textarea {line-height:normal; height: 8rem; padding:0.6rem; text-indent:0;}
 .custom-form input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):hover,
 .custom-form textarea:hover, .custom-form select:hover,

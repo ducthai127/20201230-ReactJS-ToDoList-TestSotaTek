@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function TaskForm() {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
     <div className="task_form-wrap">
       <div className="task_form-inner">
@@ -24,15 +28,31 @@ function TaskForm() {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="priority">Priority</label>
-              <select className="form-control" id="priority" name="priority">
-                <option value={2}>Normal</option>
-                <option value={1}>High</option>
-                <option value={3}>Low</option>
-              </select>
+            <div className="form-group tdl-flex">
+              <div className="left-half">
+                <label htmlFor="date">Due Date</label>
+                <DatePicker
+                  className="form-control"
+                  id="date"
+                  name="date"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  dateFormat="d MMM yyyy"
+                  minDate={new Date()}
+                  showDisabledMonthNavigation
+                />
+              </div>
+              <div className="right-half">
+                <label htmlFor="priority">Priority</label>
+                <select className="form-control" id="priority" name="priority">
+                  <option value={2}>Normal</option>
+                  <option value={1}>High</option>
+                  <option value={3}>Low</option>
+                </select>
+              </div>
             </div>
           </div>
+
           <div className="form-footer">
             <button type="submit" className="btn-style--green wt-100">
               Add

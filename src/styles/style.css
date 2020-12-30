@@ -439,7 +439,7 @@ body.safari input, body.safari textarea, body.safari button, body.safari select,
     -o-transition:all 0.3s ease;
     transition:all 0.3s ease;
 }
-.custom-form select, .custom-form textarea, .custom-form .react-datepicker-wrapper input#date {
+.custom-form select, .custom-form textarea, .custom-form .react-datepicker-wrapper input#dueDate {
     border-color: #000000;
     border-radius: 0;
     -webkit-border-radius: 0;

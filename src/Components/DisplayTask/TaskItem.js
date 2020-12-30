@@ -1,6 +1,10 @@
 import React from "react";
 
 function TaskItem() {
+  const handleEditing = () => {
+    console.log("Test editing");
+  };
+
   return (
     <div className="task_item-wrap">
       <div className="task_item-inner tdl-flex tdl-flex--justify-space-between tdl-flex--align-center">
@@ -11,7 +15,11 @@ function TaskItem() {
           </label>
         </div>
         <div className="btn-group">
-          <button type="submit" className="btn-style--aqua">
+          <button
+            type="submit"
+            className="btn-style--aqua"
+            onClick={handleEditing}
+          >
             Detail
           </button>
           <button type="submit" className="btn-style--red">

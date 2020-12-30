@@ -10,9 +10,8 @@ for (let task of TasksData) {
   let description = task.description;
   let dueDate = task.dueDate;
   let priority = task.priority;
-  let status = task.status;
 
-  let newTask = new Task(id, title, description, dueDate, priority, status);
+  let newTask = new Task(id, title, description, dueDate, priority);
   listOfTask.addTask(newTask);
 }
 

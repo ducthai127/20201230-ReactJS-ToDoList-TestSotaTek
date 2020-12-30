@@ -1,11 +1,13 @@
 import React from "react";
-import BackGround from "./components/BackGround";
+import AddTask from "./Components/AddTask";
+import DisplayTask from "./Components/DisplayTask";
 
 function App() {
   return (
-    <>
-      <BackGround />
-    </>
+    <div className="app main-container tdl-flex tdl-flex--wrap">
+      <AddTask />
+      <DisplayTask />
+    </div>
   );
 }
 

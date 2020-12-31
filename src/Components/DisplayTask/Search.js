@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
-function Search() {
+function Search({ changeFilterSearch }) {
+  const [filterSearch, setFilterSearch] = useState("");
+  const typingTimeOutRef = useRef(null);
+
+  const handleOnChange = (e) => {
+    const value = e.target.value;
+    setFilterSearch(value);
+
+    if (typingTimeOutRef.current) {
+      clearTimeout(typingTimeOutRef.current);
+    }
+
+    typingTimeOutRef.current = setTimeout(() => {
+      changeFilterSearch(filterSearch);
+    }, 200);
+  };
+
   return (
     <div className="search-wrap">
       <div className="search-inner">
@@ -9,7 +25,8 @@ function Search() {
             <input
               type="text"
               className="form-control"
-              name="search"
+              onChange={handleOnChange}
+              value={filterSearch}
               placeholder="Search ..."
             />
           </div>

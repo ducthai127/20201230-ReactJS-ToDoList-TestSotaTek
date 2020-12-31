@@ -1,6 +1,6 @@
 import React from "react";
 
-function TaskItem() {
+function TaskItem({ item }) {
   const handleEditing = () => {
     console.log("Test editing");
   };
@@ -9,9 +9,14 @@ function TaskItem() {
     <div className="task_item-wrap">
       <div className="task_item-inner tdl-flex tdl-flex--justify-space-between tdl-flex--align-center">
         <div className="heading">
-          <input type="checkbox" id="title" name="title" value="Bike" />
-          <label className="txt-color--darkGrey" htmlFor="title">
-            Title
+          <input
+            type="checkbox"
+            id={item.id}
+            name={item.title}
+            value={item.id}
+          />
+          <label className="txt-color--darkGrey" htmlFor={item.id}>
+            {item.title}
           </label>
         </div>
         <div className="btn-group">
